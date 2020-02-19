@@ -176,6 +176,185 @@ class ControleRemoto implements Controlador {	//significa que a classe ira imple
 <h2>HERANÇA</h2>
 <h2>POLIMORFISMO</h2>
 <h2>RELACIONAMENTO ENTRE CLASSES</h2>
- Aula 16
-<pre>
+<?php 
+//CLASSE Lutador.php	
+	Class Lutador{
+		private $nome;
+		private $nacionalideda;
+		private $idade, $altura, $peso;
+		private $categoria, $vitorias, $derrotas, $empates;
+		
+		//metodos
+		function apresentar(){
+			echo "Nome: " . this->getNome();
+			echo "Nacionalidade: " . this->getNacionalidade();
+			echo "Peso: " . this->getPeso();
+			echo "Idade: " . this->getIdade();
+			echo "Vitórias: " . this->getVitórias();
+			echo "Derrotas: " . this->getDerrotas() ." e Empates: " . echo this->getEmpates();;
+		}	
+		
+		function ganharLuta(){
+			this->setVitorias($this->getVitorias()+1);
+		}
+		function perderLuta(){
+			this->setDerrotas($this->getDerrotas()+1);
+		}
+		function empatarLuta(){
+			this->setEmpates($this->getEmpates()+1);
+		}
+		
+		//Metodos Especiais
+		function __construct($no, $na, $id, $al, $pe, $vi, $de, $em){
+			$this->nome = $no;
+			$this->nacionalideda = $na;
+			$this->idade = $id;
+			$this->altura = $al;
+			$this->setPeso($pe);
+			$this->vitorias = $vi;
+			$this->derrotas = $de;
+			$this->empates = $em;
+		}
+		
+		function getNome(){
+			return $this->nome;
+		}
+		
+		function getNacionalidade(){
+			return $this->nacionalidade;
+		}
+		
+		function getIdade(){
+			return $this->idade;
+		}
+		
+		function getAltura(){
+			return $this->altura;
+		}
+		
+		function getPeso(){
+			return $this->peso;
+		}
+		
+		function getVitorias(){
+			return $this->vitorias;
+		}
+		
+		function getDerrotas(){
+			return $this->derrotas;
+		}
+		
+		function getEmpates(){
+			return $this->nome;
+		}
+		
+		function setNome(){
+			$this->nome = $nome;
+		}
+		
+		function setNacionalidade(){
+			$this->nacionalidade = $nacionalidade;
+		}
+		
+		function setIdade(){
+			$this->idade = $idade;
+		}
+		
+		function setAltura(){
+			$this->altura = $altura;
+		}
+		
+		function setPeso(){
+			$this->peso = $peso;
+		}
+		
+		function setVitorias(){
+			$this->vitorias = $vitorias;
+		}
+		
+		function setDerrotas(){
+			$this->derrotas = $derrotas
+		}
+		
+		function setEmpates(){
+			$this->nome = $empates;
+		}				
+	}
+?>
+
+<?php
+//CLASSE Luta.php	
+	class Luta{
+		//atributos
+		private $desafiado;
+		private $desafiante;
+		private $rouds;
+		private $aprovada;
+		//Metodos Publicos
+		public function marcarLuta($l1, l2){
+			if ($l1->getCategoria() === $l2->getCategoria() && ($l1 != $l2)){
+				$this->aprovada = true;
+				$this-desafiado = $l1;
+				$this->desafiante = $l2;
+			}else {
+				$this->aprovada = false;
+				$this-desafiado = null;
+				$this->desafiante = null;
+			}
+		}
+		
+		public function lutar(){
+			if($this->aprovada){
+				$this->desafiado->apresentar();
+				$this->desafiante->apresentar();
+				$vencedor = rand(0,2);
+				
+				case 0: //Empates
+					echo "Empate!";
+					$this->desafiado->empatarLuta();
+					$this->desafiante->empatarLuta();
+				break;
+				
+				case 1: //Desafiado Vence
+					echo $this->desafiado->getNome(). "Venceu!";
+					$this->desafiado->ganharLuta();
+					$this->desafiante->perderLuta();
+				break;
+				
+				case 2: //Desafiante Vence
+					echo $this->desafiante->getNome(). "Venceu!";
+					$this->desafiante->ganharLuta();
+					$this->desafiado->perderLuta();
+				break;
+				
+			}else{
+				echo "Luta não pode acontecer!";
+			}
+		}
+		
+		//Metodos Especiais
+		(...) //Insterir Getters e Setters
+	}
+?>
+
+<?php
+//ARQUIVO index.php
+	require_once 'Lutador.php';
+	require_once 'Luta.php';
+	
+	l = array();
+	
+	l[0] = new Lutador("Marcos Santos", "Brasil", 30,1.75, 90.9, 11,2,1);
+	l[1] = new Lutador("Mike Taisson", "EUA", 40,1.90, 91, 14,2,3);
+	
+	$UEC01 = new Luta();
+	$UEC01->marcarLuta(l1[0],l1[1]);
+	
+	$UEC01->lutar();
+	$l[0]->status();
+	$l[1]->status();
+?>
+
+play 18
+</pre>
 </html>
