@@ -173,7 +173,8 @@ class ControleRemoto implements Controlador {	//significa que a classe ira imple
 }
 ?>
 
-<h2>HERANÇA</h2>
+
+
 <h2>POLIMORFISMO</h2>
 <h2>RELACIONAMENTO ENTRE CLASSES</h2>
 <?php 
@@ -354,7 +355,190 @@ class ControleRemoto implements Controlador {	//significa que a classe ira imple
 	$l[0]->status();
 	$l[1]->status();
 ?>
+<hr>
+<h2>play 19 Exercícios</h2>
+1- Criar classe pessoa
 
-play 18
+- nome
+- idade
+- sexo
++ fazerNiver()
+
+2- Criar Classe Livro
+- titulo
+- autor
+- totPaginas
+- pagAtual
+- aberto
+- leitor
++ detalhes()
+
+3- Criar Interface Publicação
++ abrir()
++ fechar()
++ folhear()
++ avancarPag()
++ voltarPag()
+
+---------------------------
+
+//Classe Pessoa.php
+<?php
+class Pessoa{
+	private $nome;
+	private $idade;
+	private $sexo;
+
+	public function fazerNiver(){
+		$this->idade ++;
+	}
+	
+	function __construct($nome, $idade, $sexo){
+		$this->nome = $nome;
+		$this->idade = $idade;
+		$this->sexo = $sexo;
+	}
+	...get() e seters()
+}
+
+//Classe Livro.php
+require_once('Pessoa.php');
+require_once('Publicacao.php');
+class Livro implements Publicacao{
+	private $titulo;
+	private $autor;
+	private $totPaginas;
+	private $pagAtual;
+	private $aberto;
+	private $leitor;
+	
+	public function detalhes(){
+	
+	}	
+	
+	function __construct($titulo, $autor, $totPaginas, $leitor){
+		$this->titulo = $titulo;
+		$this->autor = $autor;
+		$this->totPaginas = $totPaginas;
+		$this->leitor = $leitor;
+	}
+	...get() e seters()
+	/*
+	...imprementação dos metodos abstratos da interface Publicação
+	*/
+}
+
+//Interface Publicação.php
+interface Publicacao{
+	public function abrir();
+	public function fechar();
+	public function folhear();
+	public function avancarPag();
+	public function voltarPag();
+}
+?>
+<hr>
+Play 20/21/22/23 
+<h2>HERANÇA</h2>
+Permite  basear uma nova classe na definição de uma outra classe previamente existente.
+
+Classe Principal pode ser chamada de:
+* Mãe
+* Progenitora
+* Superclasse
+
+E as Classes dependentes são chamadas de:
+* Filha
+* Subclasse
+
+
+
+//Classe Pessoa.php
+<?php 
+class Pessoa{
+	private $nome;
+	private $idade;
+	private $sexo;
+	
+	public fazerNiver(){
+	}
+	
+	(...) getrs e seters.
+}
+?>
+
+//Classe Aluno.php
+<?php 
+class Aluno extends Pessoa{ //com o extends Pessoa, o aluno passa a ter as funcionalidades "HERANÇA" da classe Pessoa.
+	private $matricula;
+	private	$curso;
+	
+	public cancelaMatricula(){
+	}
+	
+	(...) getrs e seters.
+}
+?>
+------------------------------------------------------------------------------------------------------------------------------
+<b>CLASSE ABSTRATA</b>
+Uma classe Abstrata não pode ser instanciada. Só pode servir como progenitora.
+Não pode gerar objetos.
+
+	//Classe abstrata Pessoa.php
+	<?php 
+	class abstract Pessoa{
+		private $nome;
+		private $idade;
+		private $sexo;
+		
+		public fazerNiver(){
+		}
+		
+		(...) getrs e seters.
+	}
+
+	?>
+Logo não é possivel instanciar um objeto da Classe Pessoa: 	<s> $p1 = new Pessoa();</s>
+
+Mas pode ser feito da seguinte forma:
+
+	<?php
+	Class Aluno extends Pessoa{	
+	}
+	$p1 = new Aluno();
+	?>
+Ou seja, não posso instancia a classe Pessoa, mas como a classe Aluno é filha da Classe Pessoa, 
+é possível instanciar a classe Aluno sem nenhum problema, pois ela não é abstrata.
+Assim como é possível extender a Classe Aluno, herdando os atributos e métodos tade de Aluno quanto de Pessoa.
+	<?php
+	Class Bolsista extends Aluno{
+	}
+	$a1 = new Bolsista();
+	?>
+
+<b>METODO ABSTRATO</b>
+É um metodo declarado, mas não implementado na progenitora.
+
+
+<b>CLASSE FINAL</b>
+Não pode ser herdada por outra classe. Obrigatóriamente folha.
+Não pode ter filhos, estério.
+
+<?php
+	final Class Aluno extends Pessoa{	
+	}	
+	?>
+	A extensão da Classe Aluno é proíbida.
+	<s>Class Bolsista extends Aluno{}</s>
+
+<b>METODO FINAL</b>
+Não pode ser sobrescrito pelas suas sub-classes.
+Obrigatóriamente herdado.
+
+	<?php 
+	public final function pagarMensalidade(){
+	}
+	?>
+
 </pre>
 </html>
