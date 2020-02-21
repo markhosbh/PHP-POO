@@ -1,7 +1,7 @@
 <html>
 <h1>Curso POO PHP</h1>
 <pre>
-<h3>PUBLICO +</h3>
+<h>PUBLICO +</h3>
 	<ul>
 		<li>Qualquer um pode utilizar</li>
 		<li>* A Classe atual e todas as outras classes podem acessar</li>
@@ -19,6 +19,7 @@
 
 <h2>CLASSE</h2>
 <h3>ATRIBUTOS</h3>
+<font color="blue"> <strong>
 Class Caneta
 	public $modelo
 	public $cor
@@ -37,20 +38,23 @@ Class Caneta
 	}
 
 FimClasse
+</strong></font> 
 
 <hr>
+<font color="blue"> <strong>
 c1 = new Caneta 	--INSTANCIA DO OBJETO "CANETA"
 c1->modelo = "Bic"
 c1->cor= "azul"
 c1->escrever()		--CHAMADA DO METODO "ESCREVER"
 c1->tampar()
-
+</strong></font> 
 
 
 
 <hr>
+
 <h2>UTILIZANDO METODOS GET E SET </h2>
-					
+<font color="blue"> <strong>					
 Class Caneta{
 	
 					ATRIBUTOS
@@ -79,7 +83,7 @@ c1 = new Caneta 	--INSTANCIA DO OBJETO "CANETA"
 
 c1->setModelo("Bic"); 	--CHAMADA DO METODOS "SETERS"
 c1->setcor("Azul");
-
+</strong></font> 
 
 
 
@@ -89,7 +93,7 @@ c1->setcor("Azul");
 
 -------------> CLASSE
 
-					
+<font color="blue"> <strong>					
 Class Caneta{
 	
 					ATRIBUTOS
@@ -135,7 +139,7 @@ Class Caneta{
 ...................................................................................................
 c1 = new Caneta("bic","Vermelha"); 	--INSTANCIA DO OBJETO "CANETA" COM O CONSTRUCT;
 c2 = new Caneta("Compactor","Preta");
-
+</strong></font> 
 <h2>ENCAPSULAMENTO</h2>
 Ideia de capsula
 Ex.: Uma pilha, que possuem várias particuladidades por dentro, tal como carvão, zinco, etc, onde ficam escondidas, encapsuladas, e apenas os polos positivos e negativos ficam expostos.
@@ -146,7 +150,7 @@ Ocultar partes independentes da implementação, pemitindo construir partes invi
 INTERFACE
 Metodos Abstratos:
 Apenas o que irá acontecer, apenas a reação.
-<?php 
+<font color="blue"> <strong> 
 CONTROLE REMOTO
 <strong>Controlador.php</strong>
 interface Controlador{
@@ -171,13 +175,10 @@ class ControleRemoto implements Controlador {	//significa que a classe ira imple
 	public function volume(){ //esta function volume seria relacionada ao volume da interface <b>Controlador</b> que foi implementada na classe <b>Controlador</b>
 	}
 }
-?>
+</strong></font> 
 
-
-
-<h2>POLIMORFISMO</h2>
 <h2>RELACIONAMENTO ENTRE CLASSES</h2>
-<?php 
+<font color="blue"> <strong> 
 //CLASSE Lutador.php	
 	Class Lutador{
 		private $nome;
@@ -281,9 +282,9 @@ class ControleRemoto implements Controlador {	//significa que a classe ira imple
 			$this->nome = $empates;
 		}				
 	}
-?>
+</strong></font> 
 
-<?php
+<font color="blue"> <strong>
 //CLASSE Luta.php	
 	class Luta{
 		//atributos
@@ -336,9 +337,9 @@ class ControleRemoto implements Controlador {	//significa que a classe ira imple
 		//Metodos Especiais
 		(...) //Insterir Getters e Setters
 	}
-?>
+</strong></font> 
 
-<?php
+<font color="blue"> <strong>
 //ARQUIVO index.php
 	require_once 'Lutador.php';
 	require_once 'Luta.php';
@@ -354,7 +355,7 @@ class ControleRemoto implements Controlador {	//significa que a classe ira imple
 	$UEC01->lutar();
 	$l[0]->status();
 	$l[1]->status();
-?>
+</strong></font> 
 <hr>
 <h2>play 19 Exercícios</h2>
 1- Criar classe pessoa
@@ -383,7 +384,7 @@ class ControleRemoto implements Controlador {	//significa que a classe ira imple
 ---------------------------
 
 //Classe Pessoa.php
-<?php
+<font color="blue"> <strong>
 class Pessoa{
 	private $nome;
 	private $idade;
@@ -436,7 +437,7 @@ interface Publicacao{
 	public function avancarPag();
 	public function voltarPag();
 }
-?>
+</strong></font> 
 <hr>
 Play 20/21/22/23 
 <h2>HERANÇA</h2>
@@ -454,7 +455,7 @@ E as Classes dependentes são chamadas de:
 
 
 //Classe Pessoa.php
-<?php 
+<font color="blue"> <strong> 
 class Pessoa{
 	private $nome;
 	private $idade;
@@ -465,10 +466,10 @@ class Pessoa{
 	
 	(...) getrs e seters.
 }
-?>
+</strong></font> 
 
 //Classe Aluno.php
-<?php 
+<font color="blue"> <strong> 
 class Aluno extends Pessoa{ //com o extends Pessoa, o aluno passa a ter as funcionalidades "HERANÇA" da classe Pessoa.
 	private $matricula;
 	private	$curso;
@@ -478,14 +479,14 @@ class Aluno extends Pessoa{ //com o extends Pessoa, o aluno passa a ter as funci
 	
 	(...) getrs e seters.
 }
-?>
+</strong></font> 
 ------------------------------------------------------------------------------------------------------------------------------
 <b>CLASSE ABSTRATA</b>
 Uma classe Abstrata não pode ser instanciada. Só pode servir como progenitora.
 Não pode gerar objetos.
 
 	//Classe abstrata Pessoa.php
-	<?php 
+	<font color="blue"> <strong>
 	class abstract Pessoa{
 		private $nome;
 		private $idade;
@@ -497,37 +498,56 @@ Não pode gerar objetos.
 		(...) getrs e seters.
 	}
 
-	?>
+	</strong></font> 
 Logo não é possivel instanciar um objeto da Classe Pessoa: 	<s> $p1 = new Pessoa();</s>
 
 Mas pode ser feito da seguinte forma:
 
-	<?php
+	<font color="blue"> <strong>
 	Class Aluno extends Pessoa{	
 	}
 	$p1 = new Aluno();
-	?>
+	</strong></font>
 Ou seja, não posso instancia a classe Pessoa, mas como a classe Aluno é filha da Classe Pessoa, 
 é possível instanciar a classe Aluno sem nenhum problema, pois ela não é abstrata.
 Assim como é possível extender a Classe Aluno, herdando os atributos e métodos tade de Aluno quanto de Pessoa.
-	<?php
+	<font color="blue"> <strong>
 	Class Bolsista extends Aluno{
 	}
 	$a1 = new Bolsista();
-	?>
+	</strong></font> 
 
 <b>METODO ABSTRATO</b>
 É um metodo declarado, mas não implementado na progenitora.
+	<font color="blue"> <strong> 
+	class abstract Pessoa{
+		private $nome;
+		private $idade;
+		private $sexo;
+		
+		public function abstract fazerNiver(){
+		}
 
+	}
+		
+Neste caso, é obrigado a sobrescrever o método por ser abstrado na classe mãe
+	Class Aluno extends Pessoa{	
+		public function fazerNiver(){
+			this->idade++;
+		}
+	}
+
+
+	</strong></font> 
 
 <b>CLASSE FINAL</b>
 Não pode ser herdada por outra classe. Obrigatóriamente folha.
 Não pode ter filhos, estério.
 
-<?php
+	<font color="blue"> <strong>
 	final Class Aluno extends Pessoa{	
 	}	
-	?>
+	</strong></font> 
 	A extensão da Classe Aluno é proíbida.
 	<s>Class Bolsista extends Aluno{}</s>
 
@@ -535,10 +555,74 @@ Não pode ter filhos, estério.
 Não pode ser sobrescrito pelas suas sub-classes.
 Obrigatóriamente herdado.
 
-	<?php 
+<font color="blue"><strong>
 	public final function pagarMensalidade(){
 	}
-	?>
+</strong></font> 
+	
+<hr>
+Play 24/25
+<h2>POLIMORFISMO</h2>
+Poli = Muitas / Morfo = Formas
 
-</pre>
+Permite que um mesmo nome represente vários comportamentos diferentes.
+
+<b>PPOLIMORFISMO DE SOBREPOSIÇÃO</b> = Acontece quando um método da classe mãe é sobrescrito na subclasse, usando a mesma assinatura, "em classes diferentes"
+ASSINATURA =  Quantidade e tipo de parametros da função.
+
+	<font color="blue"> <strong>
+	//Classe Pessoa.php
+	abstract class Pessoa{
+		private $nome;
+		private $idade;
+		private $sexo;
+		
+		public function abstract fazerNiver(){
+		}
+	}
+		
+	//Classe Aluno.php
+	Class Aluno extends Pessoa{	
+		private $serie;
+		
+		public function fazerNiver(){ //aqui está o POLIMORFISMO, é utilizar/sobrescrever um metodo ja existente para reagir de multiplas formas.
+			$this->idade++;
+		}
+	}
+	
+	//Classe AlunoBenjaminButton.php	
+	Class BenjaminButton extends Aluno{
+		public function fazerNiver(){ //Neste caso, o metodo que somava idade na classe aluna, foi sobreposta pelo metodo que blueuz a idade.
+			$this->idade--;
+		}
+	}
+	</strong></font> 
+-------------
+Play 26/
+<n>POLIMORFISMO	DE SOBRECARGA</n> = Quando dentro da mesma Classe, utilizar varias formas de reação com um unico método, 
+"com assinaturas diferentes".
+<font color="red"> <strong>Obs.: POLIMORFISMO DE SOBRECARGA Não é suportado em PHP.</strong></font>
+
+	<font color="blue"> <strong> 
+	//Classe Cachorro.php extensora da classe Animal
+	private class Cachorro extends Animal{
+		public function reagir($frase){ 		//Parametro $frase do tipo caracter
+		}
+		
+		public function reagir($hora, $min){ 	//$hora e $min do tipo inteiro
+		}
+		
+		public function reagir($dono){ 			//$dono do tipo lógico
+		}
+		
+		public function reagir($idede, $peso){	//$idade = inteiro e $peso = real
+		}
+	/*
+	* Perceba que para este caso, utiliza-se de apenas um método, porém cada um com assinaturas diferentes, em uma unica Classe.
+	* (Parametros com tipos de dados e quantidades diferentes)
+	*/	
+	}
+	</strong></font> 
+
+</pre> 
 </html>
